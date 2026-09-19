@@ -16,6 +16,7 @@ By unifying physical comic workbooks (The Digital Adventures of Toyo and Boro), 
 * *Open Multilingual Speech Pipeline:* Automated text-to-speech and NLP translation engine converting audio scripts and character dialogues into regional dialects (e.g., Nigerian Pidgin, Hausa, Igbo).
 * *Generative Co-Creation Studio:* A child-safe, quantized AI module allowing kids to transform hand-drawn sketches or text prompts into rendered Toyo and Boro comic panels.
 * * Privacy-Preserving Analytics:* Anonymized telemetry sync using differential privacy to track aggregate regional digital literacy gains without capturing Personally Identifiable Information (PII).
+  * website: https://theroothub.com/toyoandboro/
 
 ---
 
