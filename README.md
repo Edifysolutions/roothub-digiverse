@@ -2,6 +2,7 @@
 [![Content License](https://img.shields.io/badge/Content_License-CC_BY_4.0-green.svg)](LICENSE-CONTENT)
 [![Digital Public Goods](https://img.shields.io/badge/DPG-Standard_Compliant-orange.svg)](https://digitalpublicgoods.net/)
 [![PWA Ready](https://img.shields.io/badge/PWA-Offline_First-brightgreen.svg)](#technical-architecture)
+[![Toyo and Boro Website](https://theroothub.com/toyoandboro/)
 
 The *Roothub Digiverse* is an open-source, transmedia EdTech ecosystem designed to bridge the digital divide for children aged 6–14 across low-resource and low-bandwidth environments in Sub-Saharan Africa. 
 
