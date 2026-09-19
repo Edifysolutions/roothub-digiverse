@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { predictAdaptiveLevel } from './ai/inference';
+import InteractiveExercise from './components/InteractiveExercise';
+import PWAInstallPrompt from './components/PWAInstallPrompt';
 
 export default function App() {
-  const [learningLevel, setLearningLevel] = useState('loading...');
+  const [learningLevel, setLearningLevel] = useState('evaluating...');
   const [isOffline, setIsOffline] = useState(!navigator.onLine);
 
   useEffect(() => {
-    // Monitor offline state
     const handleOnline = () => setIsOffline(false);
     const handleOffline = () => setIsOffline(true);
+
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
 
-    // Run offline Edge ML assessment
     predictAdaptiveLevel([3200, 0.85, 4]).then((level) => setLearningLevel(level));
 
     return () => {
@@ -22,29 +23,28 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ fontFamily: 'sans-serif', padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-      <header style={{ borderBottom: '2px solid #eee', pb: '10px' }}>
-        <h1>🌍 Roothub Digiverse</h1>
-        <p><strong>Status:</strong> {isOffline ? '📡 Offline Mode (Cached Active)' : '🌐 Online'}</p>
-        <p><strong>Adaptive Learning Pathway:</strong> {learningLevel.toUpperCase()}</p>
+    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px', fontFamily: 'sans-serif' }}>
+      <PWAInstallPrompt />
+
+      <header style={{ borderBottom: '2px solid #e5e7eb', paddingBottom: '12px' }}>
+        <h1 style={{ margin: '0 0 8px 0' }}>🌍 Roothub Digiverse</h1>
+        <p style={{ margin: '4px 0' }}>
+          <strong>Network Status:</strong> {isOffline ? '📡 Offline (Cached Active)' : '🌐 Online'}
+        </p>
+        <p style={{ margin: '4px 0' }}>
+          <strong>Adaptive Learning Path:</strong> <span style={{ background: '#4f46e5', color: '#fff', padding: '2px 8px', borderRadius: '4px' }}>{learningLevel.toUpperCase()}</span>
+        </p>
       </header>
 
-      <main style={{ marginTop: '20px' }}>
-        <section style={{ background: '#f9fafb', padding: '15px', borderRadius: '8px', marginBottom: '15px' }}>
+      <main>
+        <InteractiveExercise />
+
+        <section style={{ background: '#ffffff', borderRadius: '12px', padding: '20px', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
           <h2>📚 Toyo & Boro Interactive Comic</h2>
           <p>Episode 1: What is Digital Citizenship?</p>
-          <button style={{ padding: '10px 15px', background: '#4f46e5', color: '#fff', border: 'none', borderRadius: '4px' }}>
+          <button style={{ background: '#4f46e5', color: '#fff', border: 'none', padding: '10px 16px', borderRadius: '6px', fontWeight: 'bold', cursor: 'pointer' }}>
             Start Reading (Offline Ready)
           </button>
-        </section>
-
-        <section style={{ background: '#f9fafb', padding: '15px', borderRadius: '8px' }}>
-          <h2>🎙️ DigiKidz Radio Lessons</h2>
-          <p>Episode 4: Cyber Safety with Uncle Francis</p>
-          <audio controls style={{ width: '100%' }}>
-            <source src="/assets/audio/sample-episode.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
         </section>
       </main>
     </div>
