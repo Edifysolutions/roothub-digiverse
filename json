@@ -1,0 +1,34 @@
+{
+  "name": "roothub-digiverse",
+  "version": "1.0.0",
+  "description": "Offline-first transmedia digital literacy platform featuring Toyo & Boro and DigiKidz.",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roothub/roothub-digiverse.git"
+  },
+  "keywords": [
+    "digital-public-goods",
+    "edtech",
+    "offline-first",
+    "digital-literacy",
+    "onnx-runtime",
+    "unicef-venture-fund"
+  ],
+  "author": "The RootHub Accelerator Systems",
+  "license": "MIT",
+  "dependencies": {
+    "onnxruntime-web": "^1.18.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.3.1"
+  }
+}
